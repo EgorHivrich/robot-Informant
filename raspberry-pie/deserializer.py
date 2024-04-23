@@ -1,5 +1,5 @@
 from command import Command
-import json
+from json import loads
 
 class Deserializer:
     def __init__(self, filePath : str) -> None:
