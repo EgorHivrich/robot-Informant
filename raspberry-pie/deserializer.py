@@ -4,7 +4,7 @@ from json import loads
 class Deserializer:
     def __init__(self, filePath : str) -> None:
         with open(filePath, encoding = "UTF-8") as file:
-            self.data = json.loads(file.read())
+            self.data = loads(file.read())
         print(self)	
 		
     def __str__(self) -> str:
