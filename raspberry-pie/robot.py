@@ -19,5 +19,5 @@ class Robot:
 		
     def __getitem__(self, key : str) -> None:
 	for command in self.commands:
-		result = command if key == command.text else None
+	    result = command if key == command.text else None
 	functions.speak(result)
