@@ -3,13 +3,6 @@ from deserializer import Deserializer
 
 import functions
 
-class CreatingRobotException(Exception):
-    def __init__(self) -> None:
-        self.message = "Creating robot exception"
-
-    def __str__(self) -> str:
-        return self.message
-
 class Robot:
     def __init__(self, deserializer : Deserializer) -> None:
         self.commands = deserializer.decode()
@@ -21,3 +14,10 @@ class Robot:
         for command in self.commands:
             result = command if key == command.text else None
 	functions.speak(result)
+
+class CreatingRobotException(Exception):
+    def __init__(self) -> None:
+        self.message = "Creating robot exception"
+
+    def __str__(self) -> str:
+        return self.message
