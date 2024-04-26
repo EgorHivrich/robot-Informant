@@ -14,7 +14,7 @@ class Command:
 		index = randint(0, len(self.callbacks) - 1)
 		return self.callbacks[index]
 		
-class CreatingCommandException(Exception):
+class CreatingCommandException(BaseException):
 	def __init__(self) -> None:
 		self.message = "creating command exception"
 		

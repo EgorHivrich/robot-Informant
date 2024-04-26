@@ -1,17 +1,9 @@
-from command import Command, CreatingCommandException
-from deserializer import Deserializer
+from robot_informant import *
 
 def main() -> None:
-	command = Command("hello", ["hello", "hi"])
-	print(command)
+	robot = RobotInformant("config.json")
 	
-	deserializer = Deserializer("config.json")
-	print(deserializer)
-	
-	try:
-		error = Command("", [])
-	except CreatingCommandException as exception:
-		print(exception)
+	print(robot.commands[0].text)
 	
 if __name__ == "__main__":
 	main()

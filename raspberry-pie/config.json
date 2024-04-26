@@ -1,22 +1,22 @@
 {
-	"robot_commands":
-	[
-		{
-			"text": "Hello world",
-			"callbacks":
-			[
-				"Hello",
-				"Hi"
-			]
-		},
-		
-		{
-			"text": "bye",
-			"callbacks":
-			[
-				"BYe",
-				"Bye, bye"
-			]
-		}	
-	]
+		"commands": 
+		[
+			{
+				"text": "Hello",
+				"callbacks":
+				[
+					"Hello",
+					"Hi"
+				]
+			},
+			
+			{
+				"text": "Bye, bye",
+				"callbacks":
+				[
+					"Bye",
+					"Bye, bye"
+				]
+			}
+		]
 }

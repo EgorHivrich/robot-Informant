@@ -1,21 +1,20 @@
 from command import Command
-from deserializer import Deserializer
+from functions import speak, convert_speech_to_text
 
-import functions
+import json
 
 class RobotInformant:
-	def __init__(self, deserializer : Deserializer) -> None:
-		self.commands = deserializer.decode()
-		if commands == []:
-			raise CreatingRobotException()
-		print(self.commands)
+	def __init__(self, configPath : str) -> None:
+		with open(configPath, encoding = "UTF-8") as file:
+			self.commands = json.loads(file.read())["commands"]
+		None if self.commands == [] else None
 		
-	def __getitem__(self, key : str) -> None:
+	def __getitem__(self, key : str) -> str:
 		for command in self.commands:
 			result = command if key == command.text else None
-		functions.speak(result)
+		return result
 
-class CreatingRobotException(Exception):
+class CreatingRobotException(BaseException):
 	def __init__(self) -> None:
 		self.message = "Creating robot exception"
 
