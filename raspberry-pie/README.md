@@ -1,0 +1,1 @@
+There are all files, that are written for raspberry-pie 3. Human will tell a command, but robot will recognize speech and convert to text, then robot will check command list and say callback
