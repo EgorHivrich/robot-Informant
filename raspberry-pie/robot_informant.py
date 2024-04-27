@@ -6,10 +6,9 @@ class RobotInformant:
 		self._deserialize(configPath)
 		if self.commands == []: raise CreatingRobotException()
 		
-	def __getitem__(self, key : str) -> str:
-		result = None
+	def __getitem__(self, key : str) -> Command:
 		for command in self.commands:
-			result = command if key == command.text else None
+			if key == command.text: result = command
 		return result
 
 	def _deserialize(self, configPath : str) -> None:
