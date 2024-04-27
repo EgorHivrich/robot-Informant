@@ -1,13 +1,11 @@
 from command import Command
-from functions import speak, convert_speech_to_text
-
 import json
 
 class RobotInformant:
 	def __init__(self, configPath : str) -> None:
 		with open(configPath, encoding = "UTF-8") as file:
-			self.commands = json.loads(file.read())["commands"]
-		None if self.commands == [] else None
+			self.__dict__.update(**json.loads(file.read()))
+		if self.commands == []: raise CreatingRobotException()
 		
 	def __getitem__(self, key : str) -> str:
 		for command in self.commands:
